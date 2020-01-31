@@ -564,6 +564,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 843362084}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &460105844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460105843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100.880104, y: 1, z: 98.438446}
+  m_Center: {x: 0.08424759, y: 0, z: 0.36589813}
 --- !u!1 &491394551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1184,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720889983}
-  m_LocalRotation: {x: -0.0970847, y: 0.8999496, z: 0.25957188, w: 0.33658254}
-  m_LocalPosition: {x: -12.910553, y: -15.0257015, z: 13.999026}
+  m_LocalRotation: {x: -0.11588296, y: 0.7666484, z: 0.14450821, w: 0.6147673}
+  m_LocalPosition: {x: -79.82474, y: -31.154366, z: 26.8541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1228,7 +1241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: b544816461f324e56a39767fdeb5b114, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: b544816461f324e56a39767fdeb5b114, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1863,8 +1876,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550221903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 204.76363, y: -149.37688, z: -1023.45105}
+  m_LocalRotation: {x: -0.061493434, y: 0.8065342, z: 0.08525088, w: 0.5817677}
+  m_LocalPosition: {x: -492.86957, y: -81.44564, z: 99.85977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1986,7 +1999,7 @@ GameObject:
   - component: {fileID: 1802263456}
   m_Layer: 0
   m_Name: PlayField
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2003,7 +2016,7 @@ Transform:
   m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1802263456
 BoxCollider:
@@ -2082,7 +2095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1847665389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,11 +2355,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorCube
       objectReference: {fileID: 0}
-    - target: {fileID: 8164559350869152264, guid: e08b52a1fbf46ee4a9d135b019931057,
-        type: 3}
-      propertyPath: m_TagString
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 8241620398429942442, guid: e08b52a1fbf46ee4a9d135b019931057,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2404,123 +2412,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08b52a1fbf46ee4a9d135b019931057, type: 3}
---- !u!1 &2973008640076960163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164559350869152264, guid: e08b52a1fbf46ee4a9d135b019931057,
-    type: 3}
-  m_PrefabInstance: {fileID: 2973008640076960162}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2973008640076960164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2973008640076960163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7316ea0d283fe7045992a1665d22c3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDoorOpened: 1
-  opendoor: {fileID: 0}
-  closedoor: {fileID: 0}
---- !u!82 &2973008640076960169
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2973008640076960163}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &3141245690067317851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2598,6 +2489,11 @@ PrefabInstance:
       propertyPath: waterObject
       value: 
       objectReference: {fileID: 460105843}
+    - target: {fileID: 3141245690031557572, guid: eb0a8fe8871f06e4f9551ba3c53446e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3141245690031557627, guid: eb0a8fe8871f06e4f9551ba3c53446e4,
         type: 3}
       propertyPath: gameoverPanel
