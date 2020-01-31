@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 281769457}
   - component: {fileID: 281769456}
   - component: {fileID: 281769455}
+  - component: {fileID: 281769459}
   m_Layer: 0
   m_Name: TestCube
   m_TagString: Item
@@ -361,6 +362,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &281769459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281769454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dd23b7867f1fa44b34a5dd871b6ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RepairType: 0
 --- !u!1 &395815000
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,12 +900,6 @@ Skybox:
   m_GameObject: {fileID: 720889983}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 0}
---- !u!4 &725971062 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-    type: 3}
-  m_PrefabInstance: {fileID: 1860573654}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &843362084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1679,54 +1687,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1961643316, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: crosshairImage
+      value: 
+      objectReference: {fileID: 200236416}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
---- !u!1 &1961643314
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1961643315}
-  - component: {fileID: 1961643316}
-  m_Layer: 0
-  m_Name: PlayerRaycastSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1961643315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961643314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 725971062}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1961643316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961643314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcdeb479ede6e68499c46d323c340029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycashLenght: 100
-  colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
-  crosshairImage: {fileID: 200236416}

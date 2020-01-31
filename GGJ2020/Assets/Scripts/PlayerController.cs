@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tools
+public class ItemInventory
 {
     public int ItemCount { get; set; }
-    public int MyProperty { get; set; }
+    public int RepairType { get; set; }
 }
 
 public class PlayerController : MonoBehaviour
 {
     public float raycashLenght;
     public Color[] colors= new Color[] { Color.blue, Color.red, Color.green};
+    public List<ItemInventory> Inventory = new List<ItemInventory>();
 
     public int ToolCount = 0;
     public int MaxItemCount = 3;
@@ -39,11 +40,17 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null && hit.collider.tag == "Item")
             {
                 crosshairImage.color = colors[2];
-                if (Input.GetKey(KeyCode.Mouse0))
+               RepairTool rt=  hit.collider.transform.root.gameObject.GetComponent<RepairTool>();
+                if (Input.GetKeyDown(KeyCode.Mouse0) && this.ToolCount<MaxItemCount)
                 {
-
+                    //
                     // item alınabilir
-                    this.
+                    this.ToolCount++;
+                    Inventory.Add(new ItemInventory
+                    {
+                        ItemCount = ToolCount,
+                        RepairType = rt.RepairType
+                    });
                 }
             }
             else
@@ -64,5 +71,6 @@ public class PlayerController : MonoBehaviour
         {
             // bir sonraki Item
         }
+        Debug.Log(Inventory);
     }
 }
