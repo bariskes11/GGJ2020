@@ -180,13 +180,12 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
-
             /// item var ise  son Itemdan ateşşşş
         }
         if (Input.GetKey(KeyCode.Mouse1))
         {
             // bir sonraki Item
         }
-        Debug.Log(" Game OBject aktifmiiii!!! +" + torchParticles.gameObject.active);
+        
     }
 }
