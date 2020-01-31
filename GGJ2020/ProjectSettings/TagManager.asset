@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Item
   - Repair1
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WaterSystem : MonoBehaviour
@@ -10,24 +11,26 @@ public class WaterSystem : MonoBehaviour
     public float floatSpeed;
     public int OpenedDorCount;
     public int UnRepairedFieldCount;
-
+    public string RepairItemsTag;
+    public string DoorItemTag;
     private void Start()
     {
         
     }
+    float carpan = 0F;
     private void Update()
     {
 
-        /// su Y ekseninde yukariya doğru ilerleyecek
-        if (OpenedDorCount > 0)
-        {
-            UnRepairedFieldCount = 1;
-        }
-        if (UnRepairedFieldCount > 0)
-        {
-            OpenedDorCount = 1;
-        }
-        waterObject.transform.Translate(Vector3.up*Time.deltaTime*floatSpeed*OpenedDorCount*UnRepairedFieldCount);
+        GameObject[] RepairCount =  GameObject.FindGameObjectsWithTag(RepairItemsTag);
+        DoorStatus[] DoorCount = GameObject.FindObjectsOfType<DoorStatus>();
+        
+        // opened DoorCount
+        Debug.Log(" Kalanlarrrr"+UnRepairedFieldCount);
+        UnRepairedFieldCount = RepairCount.Length;
+        var ds = DoorCount.Where(x => x.IsDoorOpened == true).ToList();
+        OpenedDorCount = ds.Count;
+        carpan = OpenedDorCount + UnRepairedFieldCount;
+        waterObject.transform.Translate(Vector3.up*Time.deltaTime*floatSpeed*carpan);
     }
 
 

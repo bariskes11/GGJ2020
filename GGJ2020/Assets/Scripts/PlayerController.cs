@@ -21,41 +21,59 @@ public class PlayerController : MonoBehaviour
     public Text Item1Count;
     public GameObject torchFire;
     private ParticleSystem torchParticles;
-    public Color[] colors= new Color[] { Color.blue, Color.red, Color.green};
+    public Text score_Text;
+    public Color[] colors = new Color[] { Color.blue, Color.red, Color.green };
     public List<ItemInventory> Inventory = new List<ItemInventory>();
     public Text HUD;
     public int ToolCount = 0;
     public int MaxItemCount = 3;
     public Image crosshairImage;
-
+    public float ScorePerFix = 100F;
     public float BulletTimeOut;
-
-    public float CurrentRepairIndex=0F;
+    [Tooltip("Oyuncu Kaç Sn Fix işlemi yapmalıdır")]
+    public float FixtimeTimeOut;
+    public float Score = 0F;
+    public float CurrentRepairIndex = 0F;
 
     private void Awake()
     {
-        torchParticles= torchFire.GetComponentInChildren<ParticleSystem>();
+        torchParticles = torchFire.GetComponentInChildren<ParticleSystem>();
         torchParticles.gameObject.SetActive(false);
         Item1Count.text = "0";
     }
 
-    public float HUDClearTimeOut=2F;
+    public float HUDClearTimeOut = 2F;
 
-    IEnumerator  ClearHudText()
+    IEnumerator ClearHudText()
     {
         yield return new WaitForSeconds(HUDClearTimeOut);
         HUD.text = "";
     }
 
-     
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-    LineRenderer line = new LineRenderer();
 
+    }
+
+
+    void RepairCurrentObject(GameObject gmj)
+    {
+        // bir mermi için 1 sn ateş etmek gerekir.
+        var r = Inventory.Where(x => x.IsSelected == true).FirstOrDefault();
+        FixTimePassed++;
+        if (FixTimePassed > FixtimeTimeOut)
+        {
+
+            Debug.Log(r.ItemCount);
+            GameObject.Destroy(gmj);
+            Score += ScorePerFix;
+            FixTimePassed = 0;
+            score_Text.text = Score.ToString();
+        }
+    }
 
     void TakeRepairTool(RaycastHit hit)
     {
@@ -82,7 +100,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    inv.ItemCount+=1;
+                    inv.ItemCount += 1;
                 }
             }
             StartCoroutine(ClearHudText());
@@ -94,58 +112,71 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ClearHudText());
         }
     }
-    float TimePassed = 0F;
+    float BulletTimePassed = 0F;
+    float FixTimePassed = 0F;
     void UseBullet()
     {
         // bir mermi için 1 sn ateş etmek gerekir.
         var r = Inventory.Where(x => x.IsSelected == true).FirstOrDefault();
-        TimePassed++;
-        if (TimePassed> BulletTimeOut)
+        BulletTimePassed++;
+        if (BulletTimePassed > BulletTimeOut)
         {
             this.ToolCount--;
             r.ItemCount -= 1;
             Debug.Log(r.ItemCount);
-            TimePassed = 0;
+            BulletTimePassed = 0;
             Item1Count.text = r.ItemCount.ToString();
         }
     }
-
+    void SetDoorStatus(GameObject gm)
+    {
+        DoorStatus dr = gm.GetComponent<DoorStatus>();
+        dr.SetDoorStatus();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         Vector3 ray = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));
         //line = new LineRenderer();
-       // line.SetPosition(0, transform.position);
-
+        // line.SetPosition(0, transform.position);
+        bool collided = false;
         RaycastHit hit;
-
+        /// bir item a çarptik
         if (Physics.Raycast(ray, Camera.main.transform.forward, out hit, raycashLenght))
         {
             if (hit.collider != null && hit.collider.tag == "Item")
             {
                 TakeRepairTool(hit);
+                torchParticles.gameObject.SetActive(false);
+                crosshairImage.color = colors[2];
             }
             /// tamir etmee işlemi için bir click yaparken
             /// bullet bitmeden kapatmak gerekiyor 
             /// 
             var inverts = Inventory.Where(x => x.IsSelected == true).FirstOrDefault();
-            
-
-            if (inverts !=null && inverts.ItemCount>0 && hit.collider != null && hit.collider.tag.Contains("Repair") && Input.GetKey(KeyCode.Mouse0) )
+            if (inverts != null && inverts.ItemCount > 0 && hit.collider != null && hit.collider.tag.Contains("Repair") && Input.GetKey(KeyCode.Mouse0))
             {
-
+                crosshairImage.color = colors[0];
                 UseBullet();
                 torchParticles.gameObject.SetActive(true);
+                RepairCurrentObject(hit.collider.gameObject);
+            }
+            if (hit.collider != null && hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                crosshairImage.color = colors[1];
+                SetDoorStatus(hit.collider.gameObject);
             }
             else
             {
-                crosshairImage.color = colors[0];
-                torchParticles.gameObject.SetActive(false);
+                crosshairImage.color = colors[3];
             }
+            collided = true;
         }
-        else
+        else if(!collided)
         {
-            crosshairImage.color = colors[1];
+            crosshairImage.color = colors[3];
+              torchParticles.gameObject.SetActive(false);
+
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -156,6 +187,6 @@ public class PlayerController : MonoBehaviour
         {
             // bir sonraki Item
         }
-      
+        Debug.Log(" Game OBject aktifmiiii!!! +" + torchParticles.gameObject.active);
     }
 }
