@@ -19,6 +19,7 @@ public class GameOverSystem : MonoBehaviour
         Button btn= restartButton.GetComponent<Button>();
         btn.onClick.AddListener(() => RestartGame());
         gameoverPanel.SetActive(false);
+        Time.timeScale = 1F;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,7 +29,7 @@ public class GameOverSystem : MonoBehaviour
     {
         Debug.Log("Trigger Çarptı" + other.tag);
         gameoverPanel.SetActive(true);
-      Time.timeScale = 0F;
+      Time.timeScale = 0.01F;
     }
   public  void RestartGame()
     {
