@@ -19,7 +19,14 @@ public class WaterSystem : MonoBehaviour
     {
 
         /// su Y ekseninde yukariya doğru ilerleyecek
-        
+        if (OpenedDorCount > 0)
+        {
+            UnRepairedFieldCount = 1;
+        }
+        if (UnRepairedFieldCount > 0)
+        {
+            OpenedDorCount = 1;
+        }
         waterObject.transform.Translate(Vector3.up*Time.deltaTime*floatSpeed*OpenedDorCount*UnRepairedFieldCount);
     }
 
