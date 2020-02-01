@@ -166,13 +166,9 @@ public class PlayerController : MonoBehaviour
                 crosshairImage.color = colors[1];
                 SetDoorStatus(hit.collider.gameObject);
             }
-            else
-            {
-                crosshairImage.color = colors[3];
-            }
             collided = true;
         }
-        else if(!collided)
+        else if(!collided && hit.collider==null)
         {
             crosshairImage.color = colors[3];
               torchParticles.gameObject.SetActive(false);
