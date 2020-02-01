@@ -8,9 +8,12 @@ public class DoorStatus : MonoBehaviour
     private AudioSource doorSounds;
     public AudioClip opendoor;
     public AudioClip closedoor;
+    public Animator anim;
+    private string DoorStatusparamName = "DoorStatus";
     private void Start()
     {
         doorSounds = this.GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
 
     }
     public void SetDoorStatus()
@@ -20,10 +23,12 @@ public class DoorStatus : MonoBehaviour
         if (IsDoorOpened)
         {
             doorSounds.PlayOneShot(opendoor);
+            anim.SetInteger(DoorStatusparamName, 1);
         }
         else
         {
             doorSounds.PlayOneShot(closedoor);
+            anim.SetInteger(DoorStatusparamName, -1);
         }
     
     }

@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8034046055018735854}
   - component: {fileID: 1804360556349948009}
   - component: {fileID: 1792483180255454409}
+  - component: {fileID: 8800871352988558910}
   m_Layer: 0
   m_Name: Zemin
   m_TagString: Untagged
@@ -117,13 +118,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300732412360284803}
-  m_LocalRotation: {x: -0.7071068, y: -4.329781e-17, z: -4.3297816e-17, w: 0.7071067}
+  m_LocalRotation: {x: 0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0.000001, z: 1.1754944e-38}
   m_LocalScale: {x: -1, y: -1, z: -1}
   m_Children: []
   m_Father: {fileID: 9196283696725335411}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 0}
 --- !u!33 &1804360556349948009
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -170,6 +171,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8800871352988558910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300732412360284803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6.000001, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &505143476704898169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1118,7 @@ GameObject:
   - component: {fileID: 6581080440607866158}
   - component: {fileID: 4865119095772602478}
   - component: {fileID: 6428123287147754558}
+  - component: {fileID: 6689044122766247021}
   m_Layer: 0
   m_Name: "Duvarsa\u011F"
   m_TagString: Untagged
@@ -1172,6 +1187,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6689044122766247021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511549971778549970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1500004, y: 2.5000005, z: 5.7000065}
+  m_Center: {x: -0.00000020489097, y: 0.00000017881393, z: 0.61500347}
 --- !u!1 &2570824566586270059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1656,7 @@ GameObject:
   - component: {fileID: 1247818132585797004}
   m_Layer: 0
   m_Name: "Kap\u0131"
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1640,8 +1668,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4321968957872508188}
-  m_LocalRotation: {x: 7.1054274e-15, y: 1.6845604e-28, z: -6.6009013e-22, w: 1}
-  m_LocalPosition: {x: 3.929157, y: 1.1634446, z: -0.4712976}
+  m_LocalRotation: {x: 7.1054324e-15, y: -3.3691207e-28, z: -1.2209184e-21, w: 1}
+  m_LocalPosition: {x: 3.929157, y: 1.1634446, z: -0.47129762}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3019765812137653901}
@@ -1825,6 +1853,7 @@ GameObject:
   - component: {fileID: 2235788958259146102}
   - component: {fileID: 7508641219523818906}
   - component: {fileID: 7977117234484159279}
+  - component: {fileID: 4396858939791161704}
   m_Layer: 0
   m_Name: DuvarSol
   m_TagString: Untagged
@@ -1893,6 +1922,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4396858939791161704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830766725163484633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1500004, y: 2.5000005, z: 5.7000065}
+  m_Center: {x: -0.00000020489097, y: 0.00000017881393, z: 0.61500347}
 --- !u!1 &4855467569879184679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2113,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9196283696725335411}
-  - component: {fileID: 1231101789190959113}
   m_Layer: 0
   m_Name: icmekan
   m_TagString: Untagged
@@ -2104,25 +2145,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1231101789190959113
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5315543423779958624}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: aa17a8a5818aa004fb21e495be6a9818, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5446294926528938521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,9 +2766,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1670071249965599881}
+  - component: {fileID: 9083359491598400704}
+  - component: {fileID: 1483054171008261319}
+  - component: {fileID: 4972433421214991852}
   m_Layer: 0
   m_Name: KapiRotatePoint
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2758,8 +2783,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7491760780494441244}
-  m_LocalRotation: {x: 0.00000011920929, y: -0.7071067, z: 0.000000029802322, w: 0.70710695}
-  m_LocalPosition: {x: -0.9189253, y: 0.548, z: 2.68}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.9189253, y: 0.548, z: 2.822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3071453820475779910}
@@ -2768,7 +2793,55 @@ Transform:
   - {fileID: 9201478432262398503}
   m_Father: {fileID: 9196283696725335411}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!95 &9083359491598400704
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491760780494441244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 562718393f9e84d46883e854f8f2d2a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1483054171008261319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491760780494441244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7316ea0d283fe7045992a1665d22c3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDoorOpened: 0
+  opendoor: {fileID: 8300000, guid: fe14aa74fc4c7a94e9742410cbb9c9af, type: 3}
+  closedoor: {fileID: 8300000, guid: 740d959943cb4204a992969873d5ab62, type: 3}
+  anim: {fileID: 0}
+--- !u!65 &4972433421214991852
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491760780494441244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23853551, y: 1.6412555, z: 1.8801397}
+  m_Center: {x: 0.071754925, y: 0.6019015, z: -0.9044573}
 --- !u!1 &7580960013411491242
 GameObject:
   m_ObjectHideFlags: 0

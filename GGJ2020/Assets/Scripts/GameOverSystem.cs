@@ -23,9 +23,12 @@ public class GameOverSystem : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collider Çarptı" + collision.gameObject.tag);
-        gameoverPanel.SetActive(true);
-        Time.timeScale = 0.01F;
+        if (collision.gameObject.tag == "GameOverField")
+        {
+            Debug.Log("Collider Çarptı" + collision.gameObject.tag);
+            gameoverPanel.SetActive(true);
+            Time.timeScale = 0.01F;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

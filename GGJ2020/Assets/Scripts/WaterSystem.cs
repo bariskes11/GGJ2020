@@ -25,7 +25,6 @@ public class WaterSystem : MonoBehaviour
         DoorStatus[] DoorCount = GameObject.FindObjectsOfType<DoorStatus>();
         
         // opened DoorCount
-        Debug.Log(" Kalanlarrrr"+UnRepairedFieldCount);
         UnRepairedFieldCount = RepairCount.Length;
         var ds = DoorCount.Where(x => x.IsDoorOpened == true).ToList();
         OpenedDorCount = ds.Count;
