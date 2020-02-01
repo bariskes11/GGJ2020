@@ -1184,8 +1184,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720889983}
-  m_LocalRotation: {x: 0.09189411, y: 0.16443415, z: 0.015394792, w: -0.9819776}
-  m_LocalPosition: {x: 1.3744483, y: -3.9382787, z: -0.44943047}
+  m_LocalRotation: {x: -0.059228845, y: 0.18517004, z: 0.011172899, w: 0.98085636}
+  m_LocalPosition: {x: 0.17917204, y: -4.2278624, z: -2.0084229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2712,6 +2712,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8939691599155120394, guid: dad3d08913f56404189f960ac308197e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939691599155120394, guid: dad3d08913f56404189f960ac308197e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8034046055018735854, guid: dad3d08913f56404189f960ac308197e,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -2745,7 +2755,7 @@ PrefabInstance:
     - target: {fileID: 1670071249965599881, guid: dad3d08913f56404189f960ac308197e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1670071249965599881, guid: dad3d08913f56404189f960ac308197e,
         type: 3}
@@ -2755,12 +2765,12 @@ PrefabInstance:
     - target: {fileID: 1670071249965599881, guid: dad3d08913f56404189f960ac308197e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1670071249965599881, guid: dad3d08913f56404189f960ac308197e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1231101789190959113, guid: dad3d08913f56404189f960ac308197e, type: 3}
