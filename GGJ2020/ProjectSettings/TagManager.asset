@@ -16,6 +16,7 @@ TagManager:
   - room3
   - room4
   - room5
+  - Engine
   layers:
   - Default
   - TransparentFX
