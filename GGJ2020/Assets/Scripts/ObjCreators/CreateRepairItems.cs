@@ -35,10 +35,9 @@ public class CreateRepairItems : MonoBehaviour
             NextSpanTime = Random.Range(minTime, maxtime);
             float ItemY = Random.Range(0, 1F); // tüm komppantumanlar 0 ile 1 arası
             StartCoroutine(TimeOutForWait());
-
             float test_z = Random.Range(-2F, 4.5F); // tüm duvarlarda benzer mantk
             //float Itemx = Random.Range(minTransform.position.z, maxTrasnform.position.z);
-            Debug.Log(   " iTEM x" + test_z + "  Item Y"+ ItemY );
+         //   Debug.Log(   " iTEM x" + test_z + "  Item Y"+ ItemY );
             Vector3 position = new Vector3(0, ItemY, test_z);
             GameObject gm = Instantiate(brokenObject, position, Quaternion.identity);
             gm.transform.SetParent(transform);
