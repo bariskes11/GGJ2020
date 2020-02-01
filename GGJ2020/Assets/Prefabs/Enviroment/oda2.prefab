@@ -7398,7 +7398,7 @@ GameObject:
   - component: {fileID: 5899872916987185144}
   - component: {fileID: 5427302852024161192}
   - component: {fileID: 5670222226664940539}
-  - component: {fileID: 5670222226664940536}
+  - component: {fileID: 1892896898}
   m_Layer: 0
   m_Name: "Duvarsa\u011F"
   m_TagString: Untagged
@@ -7480,7 +7480,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1500004, y: 2.5000005, z: 5.7000065}
   m_Center: {x: -0.00000020489097, y: 0.00000017881393, z: 0.61500347}
---- !u!114 &5670222226664940536
+--- !u!114 &1892896898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7494,13 +7494,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxX: 0
   maxY: 0
-  brokenObject: {fileID: 4329680378205949414, guid: 2db76b5fbeeaec846b250d54b04176f9,
+  brokenObject: {fileID: 3128094662306996513, guid: 07bec0248327af645a9601fd2e342dca,
     type: 3}
   maxVTR: {x: 0, y: 0, z: 0}
   minVTR: {x: 0, y: 0, z: 0}
   minTime: 0
   maxtime: 10
   NextSpanTime: 10
+  wallRotation: -90
 --- !u!1 &3525487653644788223
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,7 +11560,7 @@ GameObject:
   - component: {fileID: 8813793278791275020}
   - component: {fileID: 8993836881549837497}
   - component: {fileID: 3413773370834444030}
-  - component: {fileID: 3413773370834444031}
+  - component: {fileID: 8362725047444436447}
   m_Layer: 0
   m_Name: DuvarSol
   m_TagString: Untagged
@@ -11641,7 +11642,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1500004, y: 2.5000005, z: 5.7000065}
   m_Center: {x: -0.00000020489097, y: 0.00000017881393, z: 0.61500347}
---- !u!114 &3413773370834444031
+--- !u!114 &8362725047444436447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11655,13 +11656,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxX: 0
   maxY: 0
-  brokenObject: {fileID: 4329680378205949414, guid: 2db76b5fbeeaec846b250d54b04176f9,
+  brokenObject: {fileID: 3128094662306996513, guid: 07bec0248327af645a9601fd2e342dca,
     type: 3}
   maxVTR: {x: 0, y: 0, z: 0}
   minVTR: {x: 0, y: 0, z: 0}
   minTime: 10
   maxtime: 15
   NextSpanTime: 10
+  wallRotation: 90
 --- !u!1 &5869125065352485653
 GameObject:
   m_ObjectHideFlags: 0
