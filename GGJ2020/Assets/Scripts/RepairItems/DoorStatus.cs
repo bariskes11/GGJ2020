@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorStatus : MonoBehaviour
 {
-    public bool IsDoorOpened;
+    public bool IsDoorOpened=false;
     private AudioSource doorSounds;
     public AudioClip opendoor;
     public AudioClip closedoor;

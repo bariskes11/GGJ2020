@@ -5202,6 +5202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1961643315}
   - component: {fileID: 1961643316}
+  - component: {fileID: 756285042}
   m_Layer: 0
   m_Name: PlayerRaycastSystem
   m_TagString: Untagged
@@ -5235,7 +5236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdeb479ede6e68499c46d323c340029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycashLenght: 5
+  raycashLenght: 7
   Item1Count: {fileID: 0}
   torchFire: {fileID: 1243541332}
   score_Text: {fileID: 0}
@@ -5246,7 +5247,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   HUD: {fileID: 0}
   ToolCount: 0
-  MaxItemCount: 3
+  MaxItemCount: 10
   crosshairImage: {fileID: 0}
   ScorePerFix: 100
   BulletTimeOut: 50
@@ -5254,6 +5255,38 @@ MonoBehaviour:
   Score: 0
   CurrentRepairIndex: 0
   HUDClearTimeOut: 2
+--- !u!114 &756285042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961643314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c900e6f51cdb82b4f8be6c81bedc7350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterSystem: {fileID: 0}
+  gameOverSystem: {fileID: 0}
+  percentText: {fileID: 0}
+  RoomCount: 5
+  HUDRooms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  HUDDoors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  HUDEngines:
+  - {fileID: 0}
+  - {fileID: 0}
+  DoorCount: 4
+  EngineCount: 2
 --- !u!1001 &6847390797871986147
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,39 +18,83 @@ public class leakingpercentController : MonoBehaviour
     public GameObject[] HUDDoors;
     public GameObject[] HUDEngines;
 
+    public int DoorCount;
+    public int EngineCount;
+
 
 
     private void Awake()
     {
 
         startupDistance = Vector3.Distance(waterSystem.transform.position, gameOverSystem.transform.position);
-        for (int i = 1; i < RoomCount; i++)
+        for (int i = 0; i < RoomCount; i++)
         {
             HUDRooms[i].SetActive(false);
+        }
+
+        for (int d = 0; d < DoorCount; d++)
+        {
+            HUDDoors[d].SetActive(false);
+        }
+        for (int e  = 0; e < EngineCount; e++)
+        {
+            HUDEngines[e].SetActive(false);
         }
     }
 
     private void Update()
     {
 
-        // 1. odada kaç tane arıza var.....
-        for (int i = 1; i < RoomCount; i++)
+        // acikKapi var ise ilgili Kısımdaalert
+        for (int d = 0; d < DoorCount; d++)
         {
-            string roomName = "room" + i.ToString();
-            string RoomHUDname = "Room" + i.ToString();
+            try
+            {
+                string Doorname = "odaDoor" + (d + 1).ToString();
+                string DoorHUDName = "Door" + (d + 1).ToString();
+                DoorStatus dr = GameObject.Find(Doorname).GetComponent<DoorStatus>();
+                if (dr == null)
+                    continue;
+                if (dr.IsDoorOpened)
+                {
+                    HUDDoors[d].SetActive(true);
+                }
+                else
+                {
+                    HUDDoors[d].SetActive(false);
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+        }
+
+
+
+        // 1. odada kaç tane arıza var.....
+        for (int i = 0; i < RoomCount; i++)
+        {
+            string roomName = "room" + (i+1).ToString();
+            string RoomHUDname = "Room" + (i+1).ToString();
             GameObject gmm = GameObject.FindGameObjectWithTag(roomName);
+            if (gmm == null)
+                continue;
             FixingItem[] repairItemsInroom = gmm.GetComponentsInChildren<FixingItem>();
-            Debug.Log("oda Adı=" + roomName + "  odadakiArizaar  " + repairItemsInroom.Length.ToString());
-
-            if (repairItemsInroom.Length > 0)
+            if (repairItemsInroom != null)
             {
-                HUDRooms[i].SetActive(true);
-            }
-            else
-            {
+                Debug.Log("oda Adı=" + roomName + "  odadakiArizaar  " + repairItemsInroom.Length.ToString());
 
-                HUDRooms[i].SetActive(false);
+                if (repairItemsInroom.Length > 0)
+                {
+                    HUDRooms[i].SetActive(true);
+                }
+                else
+                {
+
+                    HUDRooms[i].SetActive(false);
+                }
             }
+
 
         }
 
