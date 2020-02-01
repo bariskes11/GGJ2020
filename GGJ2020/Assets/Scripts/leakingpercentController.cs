@@ -21,6 +21,8 @@ public class leakingpercentController : MonoBehaviour
     public int DoorCount;
     public int EngineCount;
 
+    public float CurrentPercent;
+
 
 
     private void Awake()
@@ -101,8 +103,9 @@ public class leakingpercentController : MonoBehaviour
 
 
         float distance = Vector3.Distance(waterSystem.transform.position, gameOverSystem.transform.position);
-        float percent = 100 - ((distance / startupDistance) * 100);
-        percentText.text = Convert.ToInt32(percent).ToString();
+         CurrentPercent = 100 - ((distance / startupDistance) * 100);
+        CurrentPercent = Mathf.Clamp(CurrentPercent, 0F, 100F);
+        percentText.text = Convert.ToInt32(CurrentPercent).ToString();
         /// Debug.Log(percent);
 
     }

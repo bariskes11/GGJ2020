@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class WaterPulpSystem : MonoBehaviour
 {
-    public float StartingRotation;
+    public float StartingRotation=0F;
     public float MaxPressure;
     public float CurrentPressure;
     public bool StartedToWork = false;
     public float WorkTimeout = 15F;
+    public float MaxRotation = 260F;
     public GameObject Indicator;
     public Text InteractiveText;
 
@@ -19,6 +20,7 @@ public class WaterPulpSystem : MonoBehaviour
     {
 
         InteractiveText = GameObject.Find("PressEText").GetComponent<Text>();
+        
     }
 
 
@@ -27,29 +29,48 @@ public class WaterPulpSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Indicator.transform.Rotate(, 0, Space.World);
+
+
         if (StartedToWork)
         {
-         //   Indicator.
+            //   Indicator.
+            Indicator.transform.Rotate(-Time.deltaTime * 20F, 0, 0, Space.World);
+
+
         }
     }
 
+
+    public void Explode()
+    {
+        GameObject.Destroy(gameObject);
+    }
+
+
     public void StartWorking()
     {
-       var rslt=  Quaternion.Euler(new Vector3(260F, 0F, 0F));
-        Indicator.transform.rotation = rslt;
-        StartedToWork = true;
+
+        
+        Indicator.transform.Rotate(MaxRotation, 0, 0, Space.World);
+       
         StartCoroutine(StartToRotatePressure());
     }
     IEnumerator StartToRotatePressure()
     {
+        StartedToWork = true;
+      
         yield return new WaitForSeconds(WorkTimeout);
+        StartedToWork = false;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             InteractiveText.text = SetText;
-
+          PlayerController plyr=   other.transform.root.GetComponentInChildren<PlayerController>();
+            plyr.SetCurrentWaterEngine(this.gameObject);
             /// press E to Start
         }
     }

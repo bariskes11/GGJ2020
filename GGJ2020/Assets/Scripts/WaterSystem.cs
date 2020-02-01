@@ -11,8 +11,13 @@ public class WaterSystem : MonoBehaviour
     public float floatSpeed;
     public int OpenedDorCount;
     public int UnRepairedFieldCount;
+    public int StartedEngineCout;
     public string RepairItemsTag;
     public string DoorItemTag;
+    public int EngineCarpan;
+    public int Currentpercent;
+    public int MinEngineStartPercent;
+    
     private void Start()
     {
         
@@ -21,15 +26,35 @@ public class WaterSystem : MonoBehaviour
     private void Update()
     {
 
-        GameObject[] RepairCount =  GameObject.FindGameObjectsWithTag(RepairItemsTag);
+        GameObject[] RepairCount = GameObject.FindGameObjectsWithTag(RepairItemsTag);
         DoorStatus[] DoorCount = GameObject.FindObjectsOfType<DoorStatus>();
-        
+        WaterPulpSystem[] PulpCount = GameObject.FindObjectsOfType<WaterPulpSystem>();
+        leakingpercentController crStatus = GameObject.FindObjectOfType<leakingpercentController>();
+        int EngineCount = 0;
+        if (PulpCount != null)
+        {
+            foreach (var item in PulpCount)
+            {
+                bool status = item.StartedToWork;
+                if (status)
+                    EngineCount++;
+            }
+        }  
         // opened DoorCount
         UnRepairedFieldCount = RepairCount.Length;
         var ds = DoorCount.Where(x => x.IsDoorOpened == true).ToList();
         OpenedDorCount = ds.Count;
-        carpan = OpenedDorCount + UnRepairedFieldCount;
-        waterObject.transform.Translate(Vector3.up*Time.deltaTime*floatSpeed*carpan);
+        carpan = OpenedDorCount + UnRepairedFieldCount; 
+        if (crStatus.CurrentPercent >= MinEngineStartPercent)
+        {
+            carpan-= (EngineCarpan * EngineCount);
+        }
+
+        Debug.Log(carpan + " cALİSAN mOTOR sAYİSİİİ  "+ EngineCount);
+        
+        
+            waterObject.transform.Translate(Vector3.up * Time.deltaTime * floatSpeed * carpan);
+        
     }
 
 

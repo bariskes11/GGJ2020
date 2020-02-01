@@ -133,6 +133,10 @@ public class PlayerController : MonoBehaviour
         DoorStatus dr = gm.GetComponent<DoorStatus>();
         dr.SetDoorStatus();
     }
+
+
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -140,6 +144,9 @@ public class PlayerController : MonoBehaviour
         //line = new LineRenderer();
         // line.SetPosition(0, transform.position);
         bool collided = false;
+
+        WorkWaterEngine();
+
         RaycastHit hit;
         /// bir item a çarptik
         if (Physics.Raycast(ray, Camera.main.transform.forward, out hit, raycashLenght))
@@ -183,5 +190,27 @@ public class PlayerController : MonoBehaviour
             // bir sonraki Item
         }
         
+    }
+    public static GameObject engine;
+    public void SetCurrentWaterEngine(GameObject gmm)
+    {
+        engine = gmm;
+    }
+
+    void WorkWaterEngine()
+    {
+        string Txt = GameObject.Find("PressEText").GetComponent<Text>().text;
+        if (Input.GetKeyDown(KeyCode.E) && Txt != "")
+        {
+            WaterPulpSystem wtr = engine.GetComponent<WaterPulpSystem>();
+            if (!wtr.StartedToWork)
+            {
+                wtr.StartWorking();
+            }
+            else
+            {
+                wtr.Explode();
+            }
+        }
     }
 }
