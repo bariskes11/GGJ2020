@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RepairItems\DoorStatus.cs" />
     <Compile Include="Assets\Scripts\RepairItems\FixingItem.cs" />
+    <Compile Include="Assets\Scripts\WaterPulpSystem.cs" />
     <Compile Include="Assets\Scripts\WaterPumpEngine.cs" />
     <Compile Include="Assets\Scripts\WaterSystem.cs" />
     <None Include="Assets\ICE_sushishop\Shader\Ice(break).shader" />
