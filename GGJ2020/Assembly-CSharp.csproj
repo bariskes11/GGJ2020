@@ -62,6 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Blur LW\Scripts\shot.cs" />
+    <Compile Include="Assets\ICE_sushishop\scripts_probes\RealtimeReflection.cs" />
+    <Compile Include="Assets\ICE_sushishop\scripts_probes\RealtimeReflection1.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -79,6 +82,11 @@
     <Compile Include="Assets\Scripts\RepairItems\DoorStatus.cs" />
     <Compile Include="Assets\Scripts\RepairItems\FixingItem.cs" />
     <Compile Include="Assets\Scripts\WaterSystem.cs" />
+    <None Include="Assets\ICE_sushishop\Shader\Ice(break).shader" />
+    <None Include="Assets\Blur LW\Examples\Materials\Skybox\sb_emerald.shader" />
+    <None Include="Assets\ICE_sushishop\Shader\Glass.shader" />
+    <None Include="Assets\Blur LW\Examples\Materials\Skybox\sock_license.txt" />
+    <None Include="Assets\Blur LW\Examples\Materials\Skybox\readme.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/_UNITY_REPOS/GGJ2020/GGJ2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
