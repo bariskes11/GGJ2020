@@ -10,6 +10,12 @@ TagManager:
   - Item
   - Repair1
   - Door
+  - musicsystem
+  - room1
+  - room2
+  - room3
+  - room4
+  - room5
   layers:
   - Default
   - TransparentFX

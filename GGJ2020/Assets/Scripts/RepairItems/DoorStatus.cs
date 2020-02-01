@@ -18,6 +18,13 @@ public class DoorStatus : MonoBehaviour
     }
     public void SetDoorStatus()
     {
+        // bu animasyonlar oynuyorsa işlem var demektir 
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            Debug.Log("Animasyon bitmedi.....");
+            return;
+        }
+        
         /// kapi açiksa kapi açik animasyonu oynatilacak
         IsDoorOpened = !IsDoorOpened;
         if (IsDoorOpened)
