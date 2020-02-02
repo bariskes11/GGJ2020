@@ -13,5 +13,18 @@ public class RepairTool : MonoBehaviour
     /// </summary>
     public int RepairType;
     // Update is called once per frame
+    private AudioSource aud;
+    public AudioClip bullettakenSound;
+    private void Awake()
+    {
+        aud = GetComponent<AudioSource>();
+    }
+
+    public void TakenSound()
+    {
+        aud.PlayOneShot(bullettakenSound);
+
+    }
+
     
 }

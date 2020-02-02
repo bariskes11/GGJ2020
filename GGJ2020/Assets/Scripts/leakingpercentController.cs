@@ -91,7 +91,7 @@ public class leakingpercentController : MonoBehaviour
             FixingItem[] repairItemsInroom = gmm.GetComponentsInChildren<FixingItem>();
             if (repairItemsInroom != null)
             {
-                Debug.Log("oda Adı=" + roomName + "  odadakiArizaar  " + repairItemsInroom.Length.ToString());
+                //Debug.Log("oda Adı=" + roomName + "  odadakiArizaar  " + repairItemsInroom.Length.ToString());
 
                 if (repairItemsInroom.Length > 0)
                 {

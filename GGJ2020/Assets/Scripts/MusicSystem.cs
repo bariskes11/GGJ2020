@@ -15,7 +15,7 @@ public class MusicSystem : MonoBehaviour
     {
         if (other.tag == "musicsystem")
         {
-            Debug.Log("RRRR Şu an Buradayızz...." + this.gameObject.name);
+           //Debug.Log("RRRR Şu an Buradayızz...." + this.gameObject.name);
            
             audio.volume = 0F;
             StartCoroutine(FadeInEffect());
@@ -27,7 +27,7 @@ public class MusicSystem : MonoBehaviour
     {
         if (other.tag == "musicsystem")
         {
-            Debug.Log(" RRR Şu an BuradanAyrildik...." + this.gameObject.name);
+         //   Debug.Log(" RRR Şu an BuradanAyrildik...." + this.gameObject.name);
 
             StartCoroutine(FadeOutEffect());
             

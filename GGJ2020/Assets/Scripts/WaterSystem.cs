@@ -50,7 +50,7 @@ public class WaterSystem : MonoBehaviour
             carpan-= (EngineCarpan * EngineCount);
         }
 
-        Debug.Log(carpan + " cALİSAN mOTOR sAYİSİİİ  "+ EngineCount);
+      ///  Debug.Log(carpan + " cALİSAN mOTOR sAYİSİİİ  "+ EngineCount);
         
         
             waterObject.transform.Translate(Vector3.up * Time.deltaTime * floatSpeed * carpan);

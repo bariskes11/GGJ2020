@@ -15,15 +15,15 @@ public class WaterPulpSystem : MonoBehaviour
     public GameObject Indicator;
     public Text InteractiveText;
     public GameObject Explosion;
+    private AudioSource audi;
 
 
     public string SetText = "Press E to Start Engine";
 
     private void Awake()
     {
-
+        audi = GetComponent<AudioSource>();
         InteractiveText = GameObject.Find("PressEText").GetComponent<Text>();
-        
     }
 
 
@@ -33,15 +33,9 @@ public class WaterPulpSystem : MonoBehaviour
     void Update()
     {
 
-        //Indicator.transform.Rotate(, 0, Space.World);
-
-
         if (StartedToWork)
         {
-            //   Indicator.
             Indicator.transform.Rotate(-Time.deltaTime * 20F, 0, 0, Space.World);
-
-
         }
     }
 
@@ -62,10 +56,8 @@ public class WaterPulpSystem : MonoBehaviour
 
     public void StartWorking()
     {
-
-        
+        audi.Play();
         Indicator.transform.Rotate(MaxRotation, 0, 0, Space.World);
-       
         StartCoroutine(StartToRotatePressure());
     }
     IEnumerator StartToRotatePressure()

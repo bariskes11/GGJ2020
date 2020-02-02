@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     public float Score = 0F;
     public float CurrentRepairIndex = 0F;
 
+
+    private List<string> playerTags = new List<string> { "Item", "Repair1", "Door" };
+
     private void Awake()
     {
         torchParticles = torchFire.GetComponentInChildren<ParticleSystem>();
@@ -67,7 +70,6 @@ public class PlayerController : MonoBehaviour
         if (FixTimePassed > FixtimeTimeOut)
         {
 
-            Debug.Log(r.ItemCount);
             GameObject.Destroy(gmj);
             Score += ScorePerFix;
             FixTimePassed = 0;
@@ -85,6 +87,7 @@ public class PlayerController : MonoBehaviour
             // item alınabilir
             this.ToolCount++;
             HUD.text += "Taken One Bullet \n\r";
+            rt.TakenSound();
             if (rt.RepairType == 0)
             {
                 Item1Count.text = this.ToolCount.ToString();
@@ -123,7 +126,7 @@ public class PlayerController : MonoBehaviour
         {
             this.ToolCount--;
             r.ItemCount -= 1;
-            Debug.Log(r.ItemCount);
+            // Debug.Log(r.ItemCount);
             BulletTimePassed = 0;
             Item1Count.text = r.ItemCount.ToString();
         }
@@ -134,6 +137,25 @@ public class PlayerController : MonoBehaviour
         dr.SetDoorStatus();
     }
 
+    void SetColorOfCursor(string Tag)
+    {
+        switch (Tag)
+        {
+            case "Item":
+                crosshairImage.color = colors[2];
+                break;
+            case "Repair1":
+                crosshairImage.color = colors[0];
+                break;
+
+            case "Door":
+                crosshairImage.color = colors[1];
+                break;
+            default:
+                crosshairImage.color = colors[3];
+                break;
+        }
+    }
 
 
 
@@ -141,21 +163,24 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 ray = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));
-        //line = new LineRenderer();
-        // line.SetPosition(0, transform.position);
-        bool collided = false;
 
+        bool repairing = false;
+        bool collided = false;
         WorkWaterEngine();
 
         RaycastHit hit;
         /// bir item a çarptik
         if (Physics.Raycast(ray, Camera.main.transform.forward, out hit, raycashLenght))
         {
+            collided = true;
+            SetColorOfCursor(hit.collider.tag);
+            Debug.Log("Carptuğum Item ++" + hit.collider.tag);
+
             if (hit.collider != null && hit.collider.tag == "Item")
             {
                 TakeRepairTool(hit);
                 torchParticles.gameObject.SetActive(false);
-                crosshairImage.color = colors[2];
+
             }
             /// tamir etmee işlemi için bir click yaparken
             /// bullet bitmeden kapatmak gerekiyor 
@@ -167,30 +192,29 @@ public class PlayerController : MonoBehaviour
                 UseBullet();
                 torchParticles.gameObject.SetActive(true);
                 RepairCurrentObject(hit.collider.gameObject);
+                repairing = true;
+                return;
             }
             if (hit.collider != null && hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Mouse0))
             {
-                crosshairImage.color = colors[1];
+
                 SetDoorStatus(hit.collider.gameObject);
             }
-            collided = true;
+         
         }
-        else if(!collided && hit.collider==null)
+        if (!collided)
         {
-            crosshairImage.color = colors[3];
-              torchParticles.gameObject.SetActive(false);
-
-        }
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            /// item var ise  son Itemdan ateşşşş
-        }
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            // bir sonraki Item
+            SetColorOfCursor("");
         }
         
+
+        torchParticles.gameObject.SetActive(false);
+
+
+
+
     }
+
     public static GameObject engine;
     public void SetCurrentWaterEngine(GameObject gmm)
     {

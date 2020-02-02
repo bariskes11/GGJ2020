@@ -10,7 +10,7 @@ public class CreateRepairItems : MonoBehaviour
     public GameObject brokenObject;
     public Vector3 maxVTR;
     public Vector3 minVTR;
-
+    public float MaxCount = 4F;
 
     
     public float minTime;
@@ -31,19 +31,24 @@ public class CreateRepairItems : MonoBehaviour
     {
         while (true)
         {
+           
             yield return new WaitForSeconds(NextSpanTime);
-            NextSpanTime = Random.Range(minTime, maxtime);
-            float ItemY = Random.Range(0, 1F); // tüm komppantumanlar 0 ile 1 arası
-            StartCoroutine(TimeOutForWait());
-            float test_z = Random.Range(-2F, 4.5F); // tüm duvarlarda benzer mantk
-            //float Itemx = Random.Range(minTransform.position.z, maxTrasnform.position.z);
-         //   Debug.Log(   " iTEM x" + test_z + "  Item Y"+ ItemY );
-            Vector3 position = new Vector3(0, ItemY, test_z);
-            GameObject gm = Instantiate(brokenObject, position, Quaternion.identity);
-            gm.transform.SetParent(transform);
-            Vector3 rt = new Vector3(0, wallRotation, 0);
-            gm.transform.Rotate(rt);
-            gm.transform.localPosition = new Vector3(0,ItemY, test_z);
+            // her Duvarın MaxCount u bulunuyr
+            if (this.gameObject.GetComponentsInChildren<FixingItem>().Length < MaxCount)
+            {
+                NextSpanTime = Random.Range(minTime, maxtime);
+                float ItemY = Random.Range(0, 1F); // tüm komppantumanlar 0 ile 1 arası
+                StartCoroutine(TimeOutForWait());
+                float test_z = Random.Range(-2F, 4.5F); // tüm duvarlarda benzer mantk
+                                                        //float Itemx = Random.Range(minTransform.position.z, maxTrasnform.position.z);
+                                                        //   Debug.Log(   " iTEM x" + test_z + "  Item Y"+ ItemY );
+                Vector3 position = new Vector3(0, ItemY, test_z);
+                GameObject gm = Instantiate(brokenObject, position, Quaternion.identity);
+                gm.transform.SetParent(transform);
+                Vector3 rt = new Vector3(0, wallRotation, 0);
+                gm.transform.Rotate(rt);
+                gm.transform.localPosition = new Vector3(0, ItemY, test_z);
+            }
         }
     }
 
