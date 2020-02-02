@@ -108,18 +108,14 @@ public class leakingpercentController : MonoBehaviour
 
         }
 
-
-
         float distance = Vector3.Distance(waterSystem.transform.position, gameOverSystem.transform.position);
         CurrentPercent = 100 - ((distance / startupDistance) * 100);
-
         float carpan = Mathf.Clamp(CurrentPercent, 1, 99);
         Debug.Log(carpan);
         CurrentPercent = Mathf.Clamp(CurrentPercent, 0F, 100F);
         percentText.text = Convert.ToInt32(CurrentPercent).ToString();
 
         currentController.movementSettings.ForwardSpeed = BegginingSpeed -  ((CurrentPercent/100F)*BegginingSpeed);
-
         string EngineName = "Engine";
         WaterPulpSystem[] wtr = GameObject.FindObjectsOfType<WaterPulpSystem>();
         if (wtr != null)

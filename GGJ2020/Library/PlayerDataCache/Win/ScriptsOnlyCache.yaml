@@ -91,8 +91,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9928}
     - Class: 114
-      Script: {instanceID: 10266}
-    - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
       Script: {instanceID: 10740}
@@ -1350,4 +1348,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/_UNITY_REPOS/GGJ2020_FixmarineExports/GGJ2020.exe
+  playerPath: E:/Exporrttt_last_v2/GGJ2020.exe

@@ -42,10 +42,11 @@ public class WaterPulpSystem : MonoBehaviour
 
     public void Explode()
     {
-
+        InteractiveText.text = string.Empty;
         Instantiate(Explosion, this.transform.position,Quaternion.identity);
         StartCoroutine(wait());
         HeadBob ply = GameObject.FindObjectOfType<HeadBob>();
+        
         ply.ShakeCamera(15,1.5F);
         GameObject.Destroy(gameObject);
     }
