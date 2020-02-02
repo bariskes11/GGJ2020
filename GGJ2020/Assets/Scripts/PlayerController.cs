@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float raycashLenght;
     public Text Item1Count;
     public GameObject torchFire;
-    private ParticleSystem torchParticles;
+    private GameObject torchParticles;
     public Text score_Text;
     public Color[] colors = new Color[] { Color.blue, Color.red, Color.green };
     public List<ItemInventory> Inventory = new List<ItemInventory>();
@@ -40,9 +40,18 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        torchParticles = torchFire.GetComponentInChildren<ParticleSystem>();
+        torchParticles = GameObject.Find("FireItem");
         torchParticles.gameObject.SetActive(false);
         Item1Count.text = "0";
+    }
+
+    void Start()
+    {
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Door");
+        foreach (GameObject item in items)
+        {
+            Debug.Log("Door taglı Objeler" + item.name.ToString());
+        }
     }
 
     public float HUDClearTimeOut = 2F;
@@ -56,10 +65,7 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
 
     void RepairCurrentObject(GameObject gmj)
@@ -160,12 +166,14 @@ public class PlayerController : MonoBehaviour
 
 
     // Update is called once per frame
+    bool makingDoorProcess = false;
     void FixedUpdate()
     {
         Vector3 ray = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));
 
         bool repairing = false;
         bool collided = false;
+        
         WorkWaterEngine();
 
         RaycastHit hit;
@@ -195,18 +203,25 @@ public class PlayerController : MonoBehaviour
                 repairing = true;
                 return;
             }
-            if (hit.collider != null && hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Mouse0))
+            if ( hit.collider != null && hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Mouse0))
             {
+                
+                if (!makingDoorProcess)
+                {
+                    makingDoorProcess = true;
+                    SetDoorStatus(hit.collider.gameObject);
+                    StartCoroutine(doorStop());
 
-                SetDoorStatus(hit.collider.gameObject);
+                }
+
             }
-         
+
         }
         if (!collided)
         {
             SetColorOfCursor("");
         }
-        
+
 
         torchParticles.gameObject.SetActive(false);
 
@@ -214,8 +229,13 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    IEnumerator doorStop()
+    {
+        yield return new WaitForSeconds(0.5F);
+           makingDoorProcess = false;
+    }
 
-    public  GameObject engine;
+    public GameObject engine;
     public void SetCurrentWaterEngine(GameObject gmm)
     {
         engine = gmm;

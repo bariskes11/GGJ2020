@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\leakingpercentController.cs" />
     <Compile Include="Assets\Scripts\LightScripts\AlarmRotator.cs" />
     <Compile Include="Assets\Scripts\LightScripts\LightAlarmSystem.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenuSystem.cs" />
     <Compile Include="Assets\Scripts\MusicSystem.cs" />
     <Compile Include="Assets\Scripts\ObjCreators\CreateRepairItems.cs" />
     <Compile Include="Assets\Scripts\ObjCreators\ObjectCreators.cs" />
@@ -92,10 +93,12 @@
     <Compile Include="Assets\Scripts\WaterPulpSystem.cs" />
     <Compile Include="Assets\Scripts\WaterPumpEngine.cs" />
     <Compile Include="Assets\Scripts\WaterSystem.cs" />
+    <None Include="Assets\ErbGameArt\Procedural fire\Shaders\FireSphere.shader" />
     <None Include="Assets\ICE_sushishop\Shader\Ice(break).shader" />
     <None Include="Assets\Blur LW\Examples\Materials\Skybox\sb_emerald.shader" />
     <None Include="Assets\ICE_sushishop\Shader\Glass.shader" />
     <None Include="Assets\Blur LW\Examples\Materials\Skybox\sock_license.txt" />
+    <None Include="Assets\ErbGameArt\Procedural fire\Demo scene\Readme.txt" />
     <None Include="Assets\Blur LW\Examples\Materials\Skybox\readme.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.Timeline.Editor">

@@ -623,6 +623,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: oda4
       objectReference: {fileID: 0}
+    - target: {fileID: 3248500917657796052, guid: 7a48304e92c1c9d458db978e8463f675,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248500917782727328, guid: 7a48304e92c1c9d458db978e8463f675,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248500918056247243, guid: 7a48304e92c1c9d458db978e8463f675,
+        type: 3}
+      propertyPath: IsDoorOpened
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3248500919327592082, guid: 7a48304e92c1c9d458db978e8463f675,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1944,8 +1959,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720889983}
-  m_LocalRotation: {x: 0.020904845, y: -0.06751317, z: 0.0021008903, w: 0.99749714}
-  m_LocalPosition: {x: -0.8425875, y: -2.4506493, z: 10.7184925}
+  m_LocalRotation: {x: 0.020617696, y: 0.9220137, z: 0.04825723, w: -0.38358426}
+  m_LocalPosition: {x: 13.520149, y: -5.2171493, z: 32.57747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4268,22 +4283,6 @@ PrefabInstance:
       propertyPath: crosshairImage
       value: 
       objectReference: {fileID: 200236416}
-    - target: {fileID: 11400006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: debugMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: shakeAmount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: shakeDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: smooth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 756285042, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: waterSystem
       value: 
@@ -4340,10 +4339,6 @@ PrefabInstance:
       propertyPath: HUDEngines.Array.data[1]
       value: 
       objectReference: {fileID: 1910520922}
-    - target: {fileID: 2131876515, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1 &1898745847
@@ -5342,6 +5337,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1616637843646049139, guid: 977d71822e9f3d14b9f9b73a17742a80,
+        type: 3}
+      propertyPath: IsDoorOpened
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107592625369103016, guid: 977d71822e9f3d14b9f9b73a17742a80,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061583354592140234, guid: 977d71822e9f3d14b9f9b73a17742a80,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.91
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977d71822e9f3d14b9f9b73a17742a80, type: 3}
 --- !u!4 &1240792797854088955 stripped
@@ -6063,6 +6073,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8992106240324309775, guid: 5d71086724f4ba343b1e259aa15cb447,
+        type: 3}
+      propertyPath: IsDoorOpened
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216676699991968701, guid: 5d71086724f4ba343b1e259aa15cb447,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396035195555302758, guid: 5d71086724f4ba343b1e259aa15cb447,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.91
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d71086724f4ba343b1e259aa15cb447, type: 3}
 --- !u!33 &4225400101044580889
@@ -6548,6 +6573,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989393274430461771, guid: f72b5b65b6893204eb81bbf04ff15f7e,
+        type: 3}
+      propertyPath: IsDoorOpened
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510033071148680848, guid: f72b5b65b6893204eb81bbf04ff15f7e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 9149821663191497932, guid: f72b5b65b6893204eb81bbf04ff15f7e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -6556,7 +6591,7 @@ PrefabInstance:
     - target: {fileID: 5749801015659325426, guid: f72b5b65b6893204eb81bbf04ff15f7e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9
+      value: 0.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72b5b65b6893204eb81bbf04ff15f7e, type: 3}

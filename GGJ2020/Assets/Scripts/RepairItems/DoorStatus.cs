@@ -14,6 +14,7 @@ public class DoorStatus : MonoBehaviour
     {
         doorSounds = this.GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        IsDoorOpened = false;
 
     }
     public void SetDoorStatus()
@@ -24,20 +25,21 @@ public class DoorStatus : MonoBehaviour
             Debug.Log("Animasyon bitmedi.....");
             return;
         }
-        
         /// kapi açiksa kapi açik animasyonu oynatilacak
-        IsDoorOpened = !IsDoorOpened;
-        if (IsDoorOpened)
+        
+        if (!IsDoorOpened)
         {
             doorSounds.PlayOneShot(opendoor);
             anim.SetInteger(DoorStatusparamName, 1);
+            IsDoorOpened = true;
         }
         else
         {
             doorSounds.PlayOneShot(closedoor);
             anim.SetInteger(DoorStatusparamName, -1);
+            IsDoorOpened = false;
         }
-    
+
     }
     
 }
