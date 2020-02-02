@@ -4333,7 +4333,7 @@ GameObject:
   - component: {fileID: 612201353344458240}
   m_Layer: 0
   m_Name: "Kap\u0131"
-  m_TagString: Door
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9784,7 +9784,7 @@ Transform:
   m_GameObject: {fileID: 6372446464369755463}
   m_LocalRotation: {x: 0.00000008146035, y: 0.00000020861623, z: -1.0658141e-14, w: 1}
   m_LocalPosition: {x: 3.929157, y: 1.1634446, z: -0.47129762}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalScale: {x: 0.91, y: 1, z: 1}
   m_Children:
   - {fileID: 2770234456494383776}
   - {fileID: 4931895118951526897}

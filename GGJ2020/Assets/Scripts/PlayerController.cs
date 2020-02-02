@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour
     public GameObject torchFire;
     private GameObject torchParticles;
     public Text score_Text;
-    public Color[] colors = new Color[] { Color.blue, Color.red, Color.green };
+
+    public Color[] colors = new Color[] { Color.red, Color.blue, Color.green,Color.white };
+    private string[] InteractTextes = new string[] {"Left Click To Repair","Press E to Open Door", "Press E to Take Tubes",""};
+    private Text InteractText;
     public List<ItemInventory> Inventory = new List<ItemInventory>();
     public Text HUD;
     public int ToolCount = 0;
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         torchParticles = GameObject.Find("FireItem");
         torchParticles.gameObject.SetActive(false);
+        InteractText = GameObject.Find("InteractText").GetComponent<Text>();
         Item1Count.text = "0";
     }
 
@@ -87,7 +91,7 @@ public class PlayerController : MonoBehaviour
     {
         crosshairImage.color = colors[2];
         RepairTool rt = hit.collider.transform.root.gameObject.GetComponent<RepairTool>();
-        if (Input.GetKeyDown(KeyCode.Mouse0) && this.ToolCount < MaxItemCount)
+        if (Input.GetKeyDown(KeyCode.E) && this.ToolCount < MaxItemCount)
         {
             //
             // item alınabilir
@@ -115,7 +119,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ClearHudText());
         }
         // max kısımı geçmeye çalışyıorsun
-        if (Input.GetKeyDown(KeyCode.Mouse0) && this.ToolCount == MaxItemCount)
+        if (Input.GetKeyDown(KeyCode.E) && this.ToolCount == MaxItemCount)
         {
             HUD.text += "!!Maximum Bullets Taken. \n\r";
             StartCoroutine(ClearHudText());
@@ -149,16 +153,20 @@ public class PlayerController : MonoBehaviour
         {
             case "Item":
                 crosshairImage.color = colors[2];
+                InteractText.text = InteractTextes[2];
                 break;
             case "Repair1":
                 crosshairImage.color = colors[0];
+                InteractText.text = InteractTextes[0];
                 break;
 
             case "Door":
                 crosshairImage.color = colors[1];
+                InteractText.text = InteractTextes[1];
                 break;
             default:
                 crosshairImage.color = colors[3];
+                InteractText.text = InteractTextes[3];
                 break;
         }
     }
@@ -203,7 +211,7 @@ public class PlayerController : MonoBehaviour
                 repairing = true;
                 return;
             }
-            if ( hit.collider != null && hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.Mouse0))
+            if ( hit.collider != null && hit.collider.tag == "Door" && Input.GetKeyDown(KeyCode.E))
             {
                 
                 if (!makingDoorProcess)
