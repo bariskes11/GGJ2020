@@ -81,6 +81,8 @@
     <Compile Include="Assets\Scripts\InventorySystem.cs" />
     <Compile Include="Assets\Scripts\ItemTypes\RepairTool.cs" />
     <Compile Include="Assets\Scripts\leakingpercentController.cs" />
+    <Compile Include="Assets\Scripts\LightScripts\AlarmRotator.cs" />
+    <Compile Include="Assets\Scripts\LightScripts\LightAlarmSystem.cs" />
     <Compile Include="Assets\Scripts\MusicSystem.cs" />
     <Compile Include="Assets\Scripts\ObjCreators\CreateRepairItems.cs" />
     <Compile Include="Assets\Scripts\ObjCreators\ObjectCreators.cs" />
