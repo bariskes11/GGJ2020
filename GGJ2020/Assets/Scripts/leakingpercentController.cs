@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class leakingpercentController : MonoBehaviour
 {
@@ -22,12 +23,12 @@ public class leakingpercentController : MonoBehaviour
     public int EngineCount;
 
     public float CurrentPercent;
+    private RigidbodyFirstPersonController currentController;
 
-
-
+    float BegginingSpeed=4f;
     private void Awake()
     {
-
+        currentController = GameObject.FindObjectOfType<RigidbodyFirstPersonController>();
         startupDistance = Vector3.Distance(waterSystem.transform.position, gameOverSystem.transform.position);
         for (int i = 0; i < RoomCount; i++)
         {
@@ -111,8 +112,13 @@ public class leakingpercentController : MonoBehaviour
 
         float distance = Vector3.Distance(waterSystem.transform.position, gameOverSystem.transform.position);
         CurrentPercent = 100 - ((distance / startupDistance) * 100);
+
+        float carpan = Mathf.Clamp(CurrentPercent, 1, 99);
+        Debug.Log(carpan);
         CurrentPercent = Mathf.Clamp(CurrentPercent, 0F, 100F);
         percentText.text = Convert.ToInt32(CurrentPercent).ToString();
+
+        currentController.movementSettings.ForwardSpeed = BegginingSpeed -  ((CurrentPercent/100F)*BegginingSpeed);
 
         string EngineName = "Engine";
         WaterPulpSystem[] wtr = GameObject.FindObjectsOfType<WaterPulpSystem>();
@@ -124,9 +130,6 @@ public class leakingpercentController : MonoBehaviour
             {
                 HUDEngines[i].SetActive(true);
             }
-
-
-
         }
         else
         {
