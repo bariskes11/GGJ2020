@@ -1033,6 +1033,7 @@ MonoBehaviour:
   MaxRotation: 260
   Indicator: {fileID: 1163621154707946685}
   InteractiveText: {fileID: 0}
+  Explosion: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
   SetText: Press E to Start Engine
 --- !u!65 &8382494711378982531
 BoxCollider:

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class WaterPulpSystem : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class WaterPulpSystem : MonoBehaviour
     public float MaxRotation = 260F;
     public GameObject Indicator;
     public Text InteractiveText;
+    public GameObject Explosion;
+
 
     public string SetText = "Press E to Start Engine";
 
@@ -45,9 +48,17 @@ public class WaterPulpSystem : MonoBehaviour
 
     public void Explode()
     {
+
+        Instantiate(Explosion, this.transform.position,Quaternion.identity);
+        StartCoroutine(wait());
+        HeadBob ply = GameObject.FindObjectOfType<HeadBob>();
+        ply.ShakeCamera(15,1.5F);
         GameObject.Destroy(gameObject);
     }
-
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1F);
+    }
 
     public void StartWorking()
     {
@@ -69,9 +80,13 @@ public class WaterPulpSystem : MonoBehaviour
         if (other.tag == "Player")
         {
             InteractiveText.text = SetText;
-          PlayerController plyr=   other.transform.root.GetComponentInChildren<PlayerController>();
+            PlayerController plyr = other.transform.root.GetComponentInChildren<PlayerController>();
             plyr.SetCurrentWaterEngine(this.gameObject);
             /// press E to Start
+        }
+        else
+        {
+            InteractiveText.text = "";
         }
     }
 

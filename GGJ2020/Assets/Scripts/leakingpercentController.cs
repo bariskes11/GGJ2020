@@ -38,7 +38,7 @@ public class leakingpercentController : MonoBehaviour
         {
             HUDDoors[d].SetActive(false);
         }
-        for (int e  = 0; e < EngineCount; e++)
+        for (int e = 0; e < EngineCount; e++)
         {
             HUDEngines[e].SetActive(false);
         }
@@ -66,18 +66,25 @@ public class leakingpercentController : MonoBehaviour
                     HUDDoors[d].SetActive(false);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
             }
         }
+
+        // Engine Durumu ile ilgil ikısımda alert
+
+
+
+
+
 
 
 
         // 1. odada kaç tane arıza var.....
         for (int i = 0; i < RoomCount; i++)
         {
-            string roomName = "room" + (i+1).ToString();
-            string RoomHUDname = "Room" + (i+1).ToString();
+            string roomName = "room" + (i + 1).ToString();
+            string RoomHUDname = "Room" + (i + 1).ToString();
             GameObject gmm = GameObject.FindGameObjectWithTag(roomName);
             if (gmm == null)
                 continue;
@@ -103,9 +110,35 @@ public class leakingpercentController : MonoBehaviour
 
 
         float distance = Vector3.Distance(waterSystem.transform.position, gameOverSystem.transform.position);
-         CurrentPercent = 100 - ((distance / startupDistance) * 100);
+        CurrentPercent = 100 - ((distance / startupDistance) * 100);
         CurrentPercent = Mathf.Clamp(CurrentPercent, 0F, 100F);
         percentText.text = Convert.ToInt32(CurrentPercent).ToString();
+
+        string EngineName = "Engine";
+        WaterPulpSystem[] wtr = GameObject.FindObjectsOfType<WaterPulpSystem>();
+        if (wtr != null)
+        {
+            int calisanSayisi = wtr.Length;
+            int ArizaliSayisi = 2 - calisanSayisi;
+            for (int i = 0; i < ArizaliSayisi; i++)
+            {
+                HUDEngines[i].SetActive(true);
+            }
+
+
+
+        }
+        else
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                HUDEngines[i].SetActive(true);
+            }
+
+        }
+
+
+
         /// Debug.Log(percent);
 
     }
