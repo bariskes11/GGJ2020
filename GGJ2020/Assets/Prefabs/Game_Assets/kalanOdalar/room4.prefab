@@ -113,9 +113,9 @@ MonoBehaviour:
   maxVTR: {x: 0, y: 0, z: 0}
   minVTR: {x: 0, y: 0, z: 0}
   MaxCount: 4
-  minTime: 0
-  maxtime: 50
-  NextSpanTime: 16
+  minTime: 15
+  maxtime: 150
+  NextSpanTime: 45
   wallRotation: -90
 --- !u!1 &3248500917368393465
 GameObject:
@@ -5267,7 +5267,7 @@ GameObject:
   - component: {fileID: 3248500918056247244}
   - component: {fileID: 3248500918056247245}
   m_Layer: 0
-  m_Name: KapiRotatePoint
+  m_Name: odaDoor4
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16629,7 +16629,7 @@ MonoBehaviour:
   MaxCount: 4
   minTime: 10
   maxtime: 15
-  NextSpanTime: 10
+  NextSpanTime: 48
   wallRotation: 90
 --- !u!1 &8296172667724553466
 GameObject:

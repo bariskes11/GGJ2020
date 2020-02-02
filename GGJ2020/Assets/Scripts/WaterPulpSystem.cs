@@ -63,7 +63,6 @@ public class WaterPulpSystem : MonoBehaviour
     IEnumerator StartToRotatePressure()
     {
         StartedToWork = true;
-      
         yield return new WaitForSeconds(WorkTimeout);
         StartedToWork = false;
     }

@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public static GameObject engine;
+    public  GameObject engine;
     public void SetCurrentWaterEngine(GameObject gmm)
     {
         engine = gmm;

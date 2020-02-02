@@ -444,9 +444,9 @@ MonoBehaviour:
   maxVTR: {x: 0, y: 0, z: 0}
   minVTR: {x: 0, y: 0, z: 0}
   MaxCount: 4
-  minTime: 0
-  maxtime: 50
-  NextSpanTime: 16
+  minTime: 15
+  maxtime: 37
+  NextSpanTime: 46
   wallRotation: -90
 --- !u!1 &1319127792794518170
 GameObject:
@@ -4660,7 +4660,6 @@ GameObject:
   - component: {fileID: 2161490030748340078}
   - component: {fileID: 1955639397076823874}
   - component: {fileID: 5742729316025557378}
-  - component: {fileID: 5135878649720681017}
   m_Layer: 0
   m_Name: "Duvarsa\u011F (1)"
   m_TagString: Untagged
@@ -4741,29 +4740,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1500004, y: 2.5000005, z: 5.7000065}
   m_Center: {x: -0.00000020489097, y: 0.00000017881393, z: 0.61500347}
---- !u!114 &5135878649720681017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6035343137535480156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e753cc63aebda6d49845a751b0cc7a48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxX: 0
-  maxY: 0
-  brokenObject: {fileID: 4329680378205949414, guid: 2db76b5fbeeaec846b250d54b04176f9,
-    type: 3}
-  maxVTR: {x: 0, y: 0, z: 0}
-  minVTR: {x: 0, y: 0, z: 0}
-  MaxCount: 4
-  minTime: 0
-  maxtime: 10
-  NextSpanTime: 10
-  wallRotation: 0
 --- !u!1 &6087145614898028100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,9 +5225,9 @@ MonoBehaviour:
   maxVTR: {x: 0, y: 0, z: 0}
   minVTR: {x: 0, y: 0, z: 0}
   MaxCount: 4
-  minTime: 10
-  maxtime: 15
-  NextSpanTime: 10
+  minTime: 4
+  maxtime: 44
+  NextSpanTime: 33
   wallRotation: 90
 --- !u!1 &9018061146608926256
 GameObject:
